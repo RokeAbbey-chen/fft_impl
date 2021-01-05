@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/rokeabbey/2T/mywork/workspace/c++_workspace/fft_impl/base/complex.hpp
+string
+-
+
+/media/rokeabbey/2T/mywork/workspace/c++_workspace/fft_impl/base/image_util.hpp
+opencv4/opencv2/core.hpp
+-
+vector
+-
+assert.h
+-
+iostream
+-
+
+/media/rokeabbey/2T/mywork/workspace/c++_workspace/fft_impl/fft/fft.cpp
+fft.hpp
+/media/rokeabbey/2T/mywork/workspace/c++_workspace/fft_impl/fft/fft.hpp
+../base/complex.hpp
+/media/rokeabbey/2T/mywork/workspace/c++_workspace/fft_impl/base/complex.hpp
+iostream
+-
+../base/image_util.hpp
+/media/rokeabbey/2T/mywork/workspace/c++_workspace/fft_impl/base/image_util.hpp
+cmath
+-
+ctime
+-
+random
+-
+
+/media/rokeabbey/2T/mywork/workspace/c++_workspace/fft_impl/fft/fft.hpp
+opencv4/opencv2/core.hpp
+-
+map
+-
+
