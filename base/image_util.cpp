@@ -123,7 +123,7 @@ namespace rk {
         }
 
         void main0() {
-            main4();
+            main2();
         }
     }
 }

@@ -1,6 +1,6 @@
 #include <iostream>
 
-//#include "base/image_util.hpp"
+#include "base/image_util.hpp"
 #include "boot/boot.hpp"
 #include "fft/fft.hpp"
 int main() {

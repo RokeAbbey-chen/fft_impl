@@ -358,8 +358,9 @@ namespace rk {
 
     namespace fft_demo {
         void main8() {
-            int rows = 3 * 5;// 4 * 9 * 12 * 5;
-            int cols = 3 * 5;// 4 * 9 * 12 * 5;
+            int rows = 3 * 7;// 4 * 9 * 12 * 5;
+            int cols = 3 * 7;// 4 * 9 * 12 * 5;
+            bool usePadding = true;
             cv::Mat src = cv::Mat::zeros(rows, cols, CV_64FC2);
             srand(time(0));
             std::cout << "rand() : " << rand() << std::endl;
@@ -367,6 +368,16 @@ namespace rk {
                 for (int i = 0; i < cols; i++) {
                     src.at<cv::Vec2d>(k, i) = cv::Vec2d(k * cols + (i + 1) + (rand() & 15), 0);
                 }
+            }
+
+            if (usePadding) {
+                int optRows = getOptimizedSize(rows);
+                int optCols = getOptimizedSize(cols);
+                std::cout << "optRows:" << optRows << ", optCols:" << optCols << std::endl;
+                cv::Mat tmp;
+                PaddingHelper<double> ph(0, optRows - rows, 0, optCols - cols, 0);
+                ph.paddingImage(src, tmp);
+                src = tmp;
             }
 
             std::cout << "---------原Mat输出--------------" << std::endl;

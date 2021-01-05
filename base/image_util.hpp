@@ -163,6 +163,12 @@ namespace rk {
         return minValue;
     }
 
+    /**
+     *
+     * @tparam PAD_TYPE
+     * @param src
+     * @param dst dst要与src不同哦
+     */
     template<typename PAD_TYPE>
     void PaddingHelper<PAD_TYPE>::paddingImage(cv::Mat &src, cv::Mat &dst) {
         int dstColsCount = src.cols + left + right;
